@@ -24,8 +24,23 @@ import numpy as np
 import ql_common as C
 
 _HERE = os.path.dirname(os.path.realpath(__file__))
-_CANDIDATES = [os.environ.get("SPECTRE_DIR", ""), os.path.join(_HERE, "..", "..", "spectre"), "/home/claude/spectre"]
-SPECTRE_DIR = next((p for p in _CANDIDATES if p and os.path.isfile(os.path.join(p, "symchair44.py"))), None)
+
+
+def _find_spectre():
+    cands = [os.environ.get("SPECTRE_DIR", ""), os.path.join(_HERE, "..", "..", "spectre"), "/home/claude/spectre"]
+    return next((p for p in cands if p and os.path.isfile(os.path.join(p, "symchair44.py"))), None)
+
+
+SPECTRE_DIR = _find_spectre()
+
+
+def refresh():
+    """Look for the Spectre repository again (after SPECTRE_DIR was set or changed, e.g. by the GUI mode)."""
+    global SPECTRE_DIR
+    SPECTRE_DIR = _find_spectre()
+    return SPECTRE_DIR
+
+
 FAMILY = {"hat": (1.0, math.sqrt(3.0)), "spectre": (1.0, 1.0), "turtle": (math.sqrt(3.0), 1.0)}
 
 
