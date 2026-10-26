@@ -3,6 +3,10 @@
 Scripts: `ql_tilings.py` (geometry), `ql_tiling_spectra.py` (spectra), `ql_chair44_chains.py` (1D chains). Needs the
 [spectre](https://github.com/brentharts/spectre) repo (`SPECTRE_DIR` or a sibling clone). Labels as in `HOPF_INSULATOR.md`.
 
+![Tiling spectra](screenshots/tiling_spectra.png?raw=true "Spectra, density of states and IPR of Hat, Spectre and Turtle tight-binding models")
+
+*Figure: `cd extras; python3 ql_tiling_spectra.py --png ../screenshots/tiling_spectra.png`.*
+
 ## Geometry
 Hat, Spectre and Turtle patches (levels of the supertile inflation) become point sets and pyqula `Geometry` objects.
 Checks (**Counted**): Euler V−E+F=1 (level 3: V=3734, E=4292, F=559), vertex degrees {2,3,4}, vertex graphs bipartite.

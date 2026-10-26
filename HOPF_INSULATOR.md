@@ -3,6 +3,10 @@
 Scripts: `ql_hopf_insulator.py`, `ql_berry_bundle.py`, `ql_common.py`. Run `python3 ql_tests.py` for all self-tests.
 Labels: **Exact** (identity / integer check), **Counted** (numerical, finite grid), **Quoted** (from a paper, not re-derived).
 
+![Hopf insulator](screenshots/hopf_insulator.png?raw=true "Hopf insulator: Hopf invariant versus h, gap, and slab spectrum")
+
+*Figure: `cd extras; python3 ql_hopf_insulator.py --png ../screenshots/hopf_insulator.png`.*
+
 ## The model
 A 3D two-band insulator H(k) = d(k)·σ with d = z†σz, z₁ = sin kx + i sin ky, z₂ = sin kz + i(cos kx + cos ky + cos kz + h)
 (Moore–Ran–Wen, PRL 100, 186805 (2008); Deng et al., PRB 88, 201105 (2013) — **Quoted**). The Bloch Hamiltonian is turned into real-space
